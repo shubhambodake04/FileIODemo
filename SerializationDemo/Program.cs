@@ -6,8 +6,11 @@ namespace SerializationDemo
     {
         static void Main(string[] args)
         {
-            SerializationDemo.BinaryDeSerialization();
-            SerializationDemo.BinarySerialization();
+            BinarySerialization binarySerialization = new BinarySerialization();
+            binarySerialization.Serialization();
+            BinaryDeSerialization binaryDeSerialization = new BinaryDeSerialization();
+            binaryDeSerialization.DeSerialization();
+            Console.ReadKey();
         }
     }
 }
