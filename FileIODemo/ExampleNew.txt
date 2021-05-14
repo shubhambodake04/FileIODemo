@@ -1,0 +1,3 @@
+﻿Welcome to file IO demo
+This is the second line.Hello world - .Net is awesome
+
