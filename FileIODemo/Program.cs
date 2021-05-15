@@ -13,10 +13,10 @@ namespace FileIODemo
            //FileExists();
             //ReadAllLines();
             //ReadAllText();
-            //FileCopy();
+            FileCopy();
             //DeleteFile();
            // ReadFromStreamReader();
-            WriteUsingStreamWriter();
+            //WriteUsingStreamWriter();
             Console.ReadLine();
         }
 
@@ -48,7 +48,15 @@ namespace FileIODemo
         }
         public static void FileCopy()
         {
-            File.Copy(FILEPATH, COPYPATH);
+            try
+            {
+                File.Copy(FILEPATH, COPYPATH);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        
         }
         public static void DeleteFile()
         {
