@@ -10,25 +10,25 @@ namespace FileIODemo
         static void Main(string[] args)
         {
            
-            //FileExists();
+           FileExists();
             //ReadAllLines();
             //ReadAllText();
-            //FileCopy();
+            FileCopy();
             //DeleteFile();
-            //ReadFromStreamReader();
+           // ReadFromStreamReader();
             //WriteUsingStreamWriter();
             Console.ReadLine();
         }
 
         public static void FileExists()
         {
-           
-            if (File.Exists(filepath))
-                Console.WriteLine("File exixts");
-            else
-                Console.WriteLine("File doesn't exists");
+          
+                if (File.Exists(filepath))
+                    Console.WriteLine("File exixts");
+                else
+                    Console.WriteLine("File doesn't exists");
+         
         }
-
         public static void ReadAllLines()
         {
             
@@ -52,20 +52,25 @@ namespace FileIODemo
         }
         public static void DeleteFile()
         {
-            
             File.Delete(filepath);
-
         }
+    
         public static void ReadFromStreamReader()
         {
-            
-            using (StreamReader sr=File.OpenText(copypath))
+            try
             {
-                String s = "";
-                while ((s = sr.ReadLine()) !=null)
+                using (StreamReader sr = File.OpenText(copypath))
                 {
-                    Console.WriteLine(s);
+                    String s = "";
+                    while ((s = sr.ReadLine()) != null)
+                    {
+                        Console.WriteLine(s);
+                    }
                 }
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
             }
         
         }
