@@ -5,25 +5,25 @@ namespace FileIODemo
 {
     class Program
     {
-        const string filepath = @"C:\Users\Shubham\source\FileIODemo\FileIODemo\Example.txt";
-        const string copypath = @"C:\Users\Shubham\source\FileIODemo\FileIODemo\ExampleNew.txt";
+        const string FILEPATH = @"C:\Users\Shubham\source\FileIODemo\FileIODemo\Example.txt";
+        const string COPYPATH = @"C:\Users\Shubham\source\FileIODemo\FileIODemo\ExampleNew.txt";
         static void Main(string[] args)
         {
            
-           FileExists();
+           //FileExists();
             //ReadAllLines();
             //ReadAllText();
-            FileCopy();
+            //FileCopy();
             //DeleteFile();
            // ReadFromStreamReader();
-            //WriteUsingStreamWriter();
+            WriteUsingStreamWriter();
             Console.ReadLine();
         }
 
         public static void FileExists()
         {
           
-                if (File.Exists(filepath))
+                if (File.Exists(FILEPATH))
                     Console.WriteLine("File exixts");
                 else
                     Console.WriteLine("File doesn't exists");
@@ -34,7 +34,7 @@ namespace FileIODemo
             
             String[] lines;
 
-            lines = File.ReadAllLines(filepath);
+            lines = File.ReadAllLines(FILEPATH);
             Console.WriteLine(lines[0]);
             Console.WriteLine(lines[1]);
         }
@@ -43,23 +43,23 @@ namespace FileIODemo
             
             string lines;
 
-            lines = File.ReadAllText(filepath);
+            lines = File.ReadAllText(FILEPATH);
             Console.WriteLine(lines);
         }
         public static void FileCopy()
         {
-            File.Copy(filepath, copypath);
+            File.Copy(FILEPATH, COPYPATH);
         }
         public static void DeleteFile()
         {
-            File.Delete(filepath);
+            File.Delete(FILEPATH);
         }
     
         public static void ReadFromStreamReader()
         {
             try
             {
-                using (StreamReader sr = File.OpenText(copypath))
+                using (StreamReader sr = File.OpenText(COPYPATH))
                 {
                     String s = "";
                     while ((s = sr.ReadLine()) != null)
@@ -78,11 +78,11 @@ namespace FileIODemo
         public static void WriteUsingStreamWriter()
         {
             
-            using (StreamWriter sr = File.AppendText(copypath))
+            using (StreamWriter sr = File.AppendText(COPYPATH))
             {
-                sr.WriteLine("Hello world - .Net is awesome");
+                sr.WriteLine("\nHello world - .Net is awesome");
                 sr.Close();
-                Console.WriteLine(File.ReadAllText(copypath));
+                Console.WriteLine(File.ReadAllText(COPYPATH));
             }
         }
     }
