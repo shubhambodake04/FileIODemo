@@ -10,10 +10,10 @@ namespace FileIODemo
         static void Main(string[] args)
         {
            
-           //FileExists();
+           FileExists();
             //ReadAllLines();
             //ReadAllText();
-            FileCopy();
+            //FileCopy();
             //DeleteFile();
            // ReadFromStreamReader();
             //WriteUsingStreamWriter();
